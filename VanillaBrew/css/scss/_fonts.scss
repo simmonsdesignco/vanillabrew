@@ -1,0 +1,27 @@
+// @font-face {
+// 	font-family: 'Nexa Bold';
+// 	src: url('../fonts/Nexa Bold.eot');
+// 	src: url('../fonts/Nexa Bold.eot?#iefix') format('embedded-opentype'),
+// 	     url('../fonts/Nexa Bold.woff') format('woff'),
+// 	     url('../fonts/Nexa Bold.ttf') format('truetype'),
+// 	     url('../fonts/Nexa Bold.svg') format('svg');
+// 	font-style: normal;
+// }
+// @font-face {
+// 	font-family: 'Nexa Light';
+// 	src: url('../fonts/Nexa Light.eot');
+// 	src: url('../fonts/Nexa Light.eot?#iefix') format('embedded-opentype'),
+// 	     url('../fonts/Nexa Light.woff') format('woff'),
+// 	     url('../fonts/Nexa Light.ttf') format('truetype'),
+// 	     url('../fonts/Nexa Light.svg') format('svg');
+// 	font-style: normal;
+// }
+
+$nexa-bold: 'Nexa Bold', 'Lato', sans-serif;
+$nexa-light: 'Nexa Light', 'Lato', sans-serif;
+$lato: 'Lato', Arial, sans-serif;
+
+
+$roboto-slab: 'Roboto Slab', 'Times New Roman', serif;
+$nunito: 'Nunito', Arial, sans-serif;
+$raleway: 'Raleway', Arial, sans-serif;

@@ -1,0 +1,82 @@
+////////////////////////////////
+// Nav CSS
+////////////////////////////////
+nav {
+	width: 100%;
+	height: $nav-height;
+	position: $nav-position;
+	top: 0; left: 0;
+	z-index: 1000;
+	@include set-transition(all 0.25s ease);
+	background: $nav-background;
+	border-bottom: 1px solid $nav-border;
+	// @media screen and (min-width:1px) and (max-width:767px) {
+	// 	width: 100%;
+	// 	height: 70px;
+	// 	background: $red;
+	// 	.wrap { width: 100%; position: relative; }
+	// 	#nav-logo {
+	// 		margin: 5px 0 0 2.5%;
+	// 		width: 140px;
+	// 		height: 40px;
+	// 		img { top: -40px; }
+	// 	}
+	// 	#r-nav { display: block; }
+	// }
+	ul {
+		list-style-type: none;
+		float: right;
+		display: table;
+		height: $nav-height;
+		li {
+			float: left;
+			margin-left: 40px;
+			line-height: $nav-height;
+			&:first-child { margin-left: 0; }
+		}
+		a {
+			font-family: $raleway;
+			font-weight: 400;
+			font-size: 15px;
+			text-transform: uppercase;
+			color: $nav-link-color;
+			line-height: 15px;
+			letter-spacing: 1px;
+			@include set-transition(all 0.25s ease 0.2s);
+			&:hover { color: $nav-link-color-hover; text-decoration: none; }
+		}
+	}
+}
+#nav-logo {
+	font-family: $nunito;
+	font-weight: 700;
+	font-size: 25px;
+	line-height: $nav-height;
+	display: block;
+	float: left;
+	opacity: 0.75;
+	text-transform: uppercase;
+	color: $deep-blue;
+	&:before { content: '.'; }
+	span { text-transform: lowercase;
+		font-weight: 400;
+		&:before { content: ' {'; }
+		&:after { content: '}'; }
+	}
+	&:hover { text-decoration: none; opacity: 0.85; }
+}
+#r-nav { display: none; }
+nav.scroll {
+	background: #fff;
+	height: 90px;
+	border-bottom: 1px solid rgba(231,38,61,0.25);
+	#nav-line { display: none; }
+	#nav-logo { margin-top: 20px; img { top: 0px; } }
+	ul { top: 54px;
+		@include set-transition(all 0.25s ease 0.2s);
+		i { color: rgba(231,38,61,0.6); opacity: 0.0; }
+		a { color: lighten($grey,10%); &:hover { color: $grey; } } }
+}
+nav.r-open {
+	ul { top: 70px; opacity: 1.0; visibility: visible; @include set-transform(scale(1.0)); }
+}

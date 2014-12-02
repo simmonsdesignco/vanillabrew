@@ -1,0 +1,226 @@
+////////////////////////
+// DEFAULTS
+////////////////////////
+
+// Default Colors
+$light-grey: #f9f9fa;
+$red: #ff3366;
+$deep-blue: #323a45;
+
+// Default Sizes
+$page-width: 1250px;
+$p-line-height: 24px;
+$p-font-size: 16px;
+$h1-font-size: 28px;
+$h2-font-size: 26px;
+$h3-font-size: 24px;
+$h4-font-size: 22px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+
+
+// Default Element Variables
+$h1-color: $deep-blue;
+$h2-color: $deep-blue;
+$h3-color: $deep-blue;
+$h4-color: $deep-blue;
+$h5-color: $deep-blue;
+$h6-color: $deep-blue;
+$a-color: $red;
+
+$body-background: #fff;
+$footer-background: #333;
+
+
+////////////////////////
+// HELPER CLASSES
+////////////////////////
+
+// Greys
+$lighter-grey-bg: #f9f9f9 !important;
+$light-grey-bg: #f0f0f0 !important;
+$dark-grey-bg: #333 !important;
+$grey-bg: #ccc !important;
+
+// Reds
+$light-red-bg: lighten($red, 7%) !important;
+$dark-red-bg: darken($red, 7%) !important;
+$red-bg: $red !important;
+
+// Blues
+$light-blue-bg: lighten($deep-blue, 14%) !important;
+$dark-blue-bg: $deep-blue !important;
+$blue-bg: lighten($deep-blue, 2%) !important;
+
+// Mint Greens
+$light-mint-green-bg: lighten(#ccced0, 5%) !important;
+$dark-mint-green-bg: darken(#ccced0, 15%) !important;
+$mint-green-bg: #ccced0 !important;
+
+// Purples
+$light-purple-bg: lighten(#665464, 5%) !important;
+$dark-purple-bg: darken(#665464, 10%) !important;
+$purple-bg: #665464 !important;
+
+
+
+////////////////////////
+// NAV OPTIONS
+////////////////////////
+$nav-position: fixed;
+$nav-height: 90px;
+$nav-background: #fff;
+$nav-border: #e4e4e4;
+$nav-link-color: #323a45;
+$nav-link-color-hover: #323a45;
+
+
+////////////////////////
+// RESPONSIVE
+////////////////////////
+$min-width-1024: 1024px;
+$max-width-1023: 1023px;
+$min-width-768: 768px;
+$max-width-767: 767px;
+$min-width-420: 420px;
+$max-width-419: 419px;
+$min-width-1: 1px;
+
+
+
+////////////////////////
+// HEADLINE
+////////////////////////
+$headline-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-background-1: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-background-2: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$headline-background-3: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-background-4: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-background-5: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-background-6: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$headline-button-color: $red;
+
+$headline-small-height: 350px;
+$headline-small-background: $deep-blue url('../images/dark-mosaic.png');
+
+////////////////////////
+// PAGE HEADLINE
+////////////////////////
+$page-headline-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-background-1: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-background-2: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$page-headline-background-3: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-background-4: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-background-5: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-background-6: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$page-headline-button-color: $red;
+$page-headline-height: 100px;
+
+
+////////////////////////
+// ROWS
+////////////////////////
+
+// Halves
+$halves-padding: 60px;
+$halves-icon-color: $red;
+$halves-h2-color: $red;
+
+// Thirds
+$thirds-padding: 60px;
+$third-icon-color: $red;
+$third-h2-color: $red;
+
+// Fourths
+$fourths-padding: 60px;
+$fourths-icon-color: $red;
+$fourths-h2-color: $red;
+
+// Fifths
+$fifths-padding: 60px;
+$fifths-icon-color: $red;
+$fifths-h2-color: $red;
+
+// Fifths
+$sixths-padding: 60px;
+$sixths-icon-color: $red;
+$sixths-h2-color: $red;
+
+
+////////////////////////
+// SLIDER
+////////////////////////
+$slide-1-background: url('../images/vanillabrew-slider-1.jpg') no-repeat center center;
+$slide-2-background: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$slide-3-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$slide-4-background: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$slide-5-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$slide-6-background: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$slide-7-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$slide-8-background: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$slide-9-background: url('../images/vanillabrew-headline-comp.jpg') no-repeat center center;
+$slide-10-background: url('../images/vanillabrew-headline-2.jpg') no-repeat center center;
+$slider-height: 500px;
+
+////////////////////////
+// CONTENT SECTION
+////////////////////////
+$content-section-background: #fff;
+$content-block-padding: 60px;
+
+////////////////////////
+// SIDEBAR
+////////////////////////
+$side-bar-padding: 60px;
+
+
+////////////////////////
+// DIVIDER
+////////////////////////
+$divider-background: #eee;
+$divider-padding: $p-line-height;
+
+////////////////////////
+// FORM
+////////////////////////
+$form-padding: 30px;
+$form-h2-padding: 10px;
+$field-wrap-padding-top: 15px;
+$input-border-color: $mint-green-bg;
+$input-border-color-hover: $light-red-bg;
+$input-font-size: 15px;
+$submit-border-color: lighten($red, 7%);
+$submit-border-color-hover: $light-red-bg;
+
+
+////////////////////////
+// FOOTER
+////////////////////////
+$footer-section-background: transparent;
+$footer-padding: 30px;
+$footer-h6-color: #eee;
+$footer-link-color: #ccc;
+$footer-link-padding: 0px;
+
+////////////////////////
+// IMPORTS
+////////////////////////
+
+@import 'colors';
+@import 'mixins';
+@import 'fonts';
+
+// CSS Resources
+@import 'reset';
+@import 'global-wrappers';
+@import 'header';
+@import 'nav';
+@import 'content';
+@import 'footer';
+@import 'front-page';
+@import 'sweet-alert';
+@import 'helper';
+
+// Responsive
+@import 'media-queries'
+

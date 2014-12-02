@@ -1,0 +1,50 @@
+@mixin rounded($radius: 6px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin border-radius($radius: 6px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin set-transition($motion) {
+	-webkit-transition: $motion;
+	-moz-transition: $motion;
+	-ms-transition: $motion;
+	-o-transition: $motion;
+	transition: $motion;
+}
+@mixin set-transform($effect...) {
+	-webkit-transform: $effect;
+	-moz-transform:    $effect;
+	-ms-transform:     $effect;
+	-o-transform:      $effect;
+	transform:         $effect;
+}
+@mixin box-shadow($shadows...) {
+	-moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
+	box-shadow: $shadows;
+}
+@mixin gradient($start,$stop) {
+ 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $stop));
+	background-image: -webkit-linear-gradient(top, $start, $stop);
+	background-image: -moz-linear-gradient(top, $start, $stop);
+	background-image: -ms-linear-gradient(top, $start, $stop);
+	background-image: -o-linear-gradient(top, $start, $stop);
+	background-image: linear-gradient(top, $start, $stop);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#{$start}, endColorstr=#{$stop});
+}
+@mixin box-sizing($val) {
+	box-sizing: $val;
+	-webkit-box-sizing: $val;
+	-moz-box-sizing: $val;
+}
+@mixin background-size($val: cover) {
+	-webkit-background-size: $val;
+	-moz-background-size: $val;
+	-o-background-size: $val;
+	background-size: $val;
+}
