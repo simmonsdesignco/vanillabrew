@@ -217,8 +217,54 @@ VnB.slider = (function($, VnB) {
 
 VnB.validate = (function($, VnB) {
 	var init = function() {
-		// TODO:
-		// add all the errors elements to the DOM
+		$('form').each(function(){
+			var thisForm = $(this);
+			for (i=0; i < thisForm.length; i++) {
+				$(this).find('input').each(function(){
+					var newErrorMessage = $('<div></div>'),
+						findMsg = $(this).attr('id');
+					newErrorMessage.html(errorMessages(findMsg)).attr('id', 'error-' + findMsg).addClass('error');
+					$(this).after(newErrorMessage);
+				});
+				$(this).find('textarea').each(function(){
+					var newErrorMessage = $('<div></div>'),
+						findMsg = $(this).attr('id');
+					newErrorMessage.html(errorMessages(findMsg)).attr('id','error-' + findMsg).addClass('error');
+					$(this).after(newErrorMessage);
+				});
+			}
+		});
+
+		// handle form submissions
+		$('form').submit(function(e){
+			var thisID = $(this).attr('id');
+			if (VnB.validate.check(thisID)) {
+				// submit the form
+				return true;
+			} else {
+				swal("Oops...","Please make sure you filled out all required fields.","error");
+				return false;
+			}
+		});
+	};
+	var errorMessages = function(error) {
+		var msg = '';
+		if (error == 'first-name') {
+			msg = 'Please enter a first name.';
+		}
+		if (error == 'last-name') {
+			msg = 'Please enter a last name.';
+		}
+		if (error == 'email') {
+			msg = 'Enter a valid email address.';
+		}
+		if (error == 'phone-number') {
+			msg = 'Enter a valid phone number.';
+		}
+		if (error == 'message') {
+			msg = 'Please enter a message.';
+		}
+		return msg;
 	};
 	var sdcValidate = function(formID) {
 		var this_form = document.getElementById(formID),
@@ -235,17 +281,9 @@ VnB.validate = (function($, VnB) {
 			if (document.getElementById(this_error_id)) {
 				document.getElementById(this_error_id).style.display = 'none';
 			}
-			// is_req = false;
 			add_error = false;
 			val = object.value;
-			// if (object.hasAttribute('req')) {
-			// 	req = object.getAttribute('req');
-			// 	if (req == 'yes') {
-			// 		is_req = true;
-			// 	}
-			// } else { is_req = false; }
 			is_req = (object.hasAttribute('required')) ? true : false;
-			// if (object.hasAttribute('required')) {}
 			if (object.hasAttribute('placeholder') && is_req) {
 				holder = object.getAttribute('placeholder');
 				if (val == holder) {
@@ -282,9 +320,22 @@ VnB.validate = (function($, VnB) {
 			return false;
 		}
 	}; // sdcValidate()
+	var callback = function(success) {
+		if (success) {
+			// Success
+			swal("Thanks!", "We\'ll be in touch soon!", "success");
+			// TODO >> reset all fields
+		}
+		else {
+			// Errors
+			swal("Argh!", "We could not send your message...", "error");
+		}
+		return true;
+	};
 	return {
 		init: init,
-		check: sdcValidate
+		check: sdcValidate,
+		callback: callback
 	};
 })($, VnB);
 

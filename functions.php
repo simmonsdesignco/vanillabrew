@@ -331,10 +331,11 @@ function sdc_form($atts, $content = '') {
             'action' => '',
             'id' => ''
         ), $atts);
-    $buildReturn = '<form onsubmit="return VnB.validate.check("'.$atts['id'].'");" method="post" action="'.$atts['action'].'" id="'.$atts['id'].'" name="'.$atts['id'].'" class="contact-form';
+    $buildReturn = '<form enctype="multipart/form-data" method="post" target="'.$atts['id'].'-target" action="'.get_template_directory_uri().'/php/'.$atts['action'].'.php" id="'.$atts['id'].'" name="'.$atts['id'].'" class="contact-form';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '"><div class="wrap"><div class="inner-wrap">';
-    return $buildReturn.do_shortcode($content).'</div></div></form>';
+    $closing = '</div></div></form><iframe id="'.$atts['id'].'-target" name="'.$atts['id'].'-target" class="form-target" src="#"></iframe>';
+    return $buildReturn.do_shortcode($content).$closing;
 }
 function sdc_field($atts, $content = null) {
     $atts = normalize_attributes($atts);
@@ -346,6 +347,7 @@ function sdc_field($atts, $content = null) {
             'required' => false,
             'class' => ''
         ), $atts);
+    $atts['label'] .= ($atts['required'] ? '<b>*</b>' : '');
     $buildReturn = '<div class="field-wrap';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '">';
@@ -364,11 +366,12 @@ function sdc_message($atts, $content = null) {
             'required' => false,
             'class' => ''
         ), $atts);
+    $atts['label'] .= ($atts['required'] ? '<b>*</b>' : '');
     $buildReturn = '<div class="field-wrap';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '">';
     $buildReturn .= ($atts['label'] != '' ? '<label for="'.$atts['name'].'">'.$atts['label'].'</label>' : '');
-    $buildReturn .= '<textarea name="'.$atts['name'].'" value="" placeholder="'.$atts['placeholder'].'" class="textarea-field"';
+    $buildReturn .= '<textarea name="'.$atts['name'].'" id="'.$atts['name'].'" value="" placeholder="'.$atts['placeholder'].'" class="textarea-field"';
     $buildReturn .= ($atts['required'] ? ' required ' : '');
     $buildReturn .= '>';
     return $buildReturn.do_shortcode($content).'</textarea></div>';
@@ -382,7 +385,7 @@ function sdc_submit($atts, $content = null) {
     $buildReturn = '<div class="field-wrap';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '">';
-    $buildReturn .= '<button type="submit" id="submit-button">'.$atts['label'].'</button>';
+    $buildReturn .= '<button type="submit" id="submit-button" onclick="VnB.validate.check("form-1");">'.$atts['label'].'</button>';
     return $buildReturn.do_shortcode($content).'</div>';
 }
 

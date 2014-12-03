@@ -823,6 +823,21 @@ form {
 	padding: $field-wrap-padding-top 0 0 0;
 	width: 80%;
 }
+.error {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 20px;
+	color: red;
+	display: none;
+}
+.form-target {
+	width: 0;
+	height: 0;
+	border: 0;
+	position: absolute;
+	left: -10000px;
+	top: -10000px;
+}
 
 ////////////////////////////////
 // Contact Sidebar

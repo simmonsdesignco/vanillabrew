@@ -22,6 +22,7 @@ $mode = '?'.time();
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.easing.1.3.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/touche.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/skrollr.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/sweet-alert.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/custom.js<?php echo $mode; ?>"></script>
 
 <?php if (is_front_page()) { ?>
