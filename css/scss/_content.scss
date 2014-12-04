@@ -17,30 +17,35 @@ h1 {
 h2 {
 	font-family: $raleway;
 	font-size: $h2-font-size;
+	font-weight: 400;
 	line-height: $h2-font-size;
 	color: $h2-color;
 }
 h3 {
 	font-family: $raleway;
 	font-size: $h3-font-size;
+	font-weight: 300;
 	line-height: $h3-font-size;
 	color: $h3-color;
 }
 h4 {
 	font-family: $raleway;
 	font-size: $h4-font-size;
+	font-weight: 300;
 	line-height: $h4-font-size;
 	color: $h4-color;
 }
 h5 {
 	font-family: $raleway;
 	font-size: $h5-font-size;
+	font-weight: 300;
 	line-height: $h5-font-size;
 	color: $h5-color;
 }
 h6 {
 	font-family: $raleway;
 	font-size: $h6-font-size;
+	font-weight: 300;
 	line-height: $h6-font-size;
 	color: $h6-color;
 }
@@ -264,7 +269,6 @@ section {
 	}
 	h3 {
 		padding: $thirds-h3-padding 0 $thirds-h3-padding 0;
-		font-weight: 300;
 	}
 	.section {
 		width: 33.33%;
@@ -317,6 +321,9 @@ section {
 	h1 {
 		text-align: center;
 		padding: $fourths-padding 0 ($fourths-padding / 1.5) 0;
+	}
+	h3 {
+		padding: $fourths-h3-padding 0 $fourths-h3-padding 0;
 	}
 	.section {
 		width: 25%;
@@ -427,6 +434,11 @@ section {
 		}
 	}
 }
+
+////////////////////////////////
+// Slider
+////////////////////////////////
+.section { min-height: 1px; }
 
 ////////////////////////////////
 // Slider
@@ -678,7 +690,7 @@ section {
 ////////////////////////////////
 .content-block {
 	width: 70%;
-	&:after {
+	&:after, &:before {
 		content: '';
 		width: 100%;
 		height: $content-block-padding;
@@ -690,7 +702,7 @@ section {
 		font-weight: normal;
 	}
 	h1 {
-		padding: $content-block-padding 0 $p-line-height 0;
+		padding: 0 0 $p-line-height 0;
 	}
 	h2 {
 		padding: ($p-line-height / 2) 0 0 0;
@@ -721,7 +733,7 @@ section {
 .side-bar {
 	width: 30%;
 	@include box-sizing(border-box);
-	&:after {
+	&:after, &:before {
 		content: '';
 		width: 100%;
 		height: $side-bar-padding;
@@ -733,7 +745,7 @@ section {
 		font-weight: normal;
 	}
 	h1 {
-		padding: $side-bar-padding 0 $p-line-height 0;
+		padding: 0 0 $p-line-height 0;
 	}
 	h2 {
 		padding: ($p-line-height / 2) 0 0 0;
@@ -778,9 +790,9 @@ section {
 ////////////////////////////////
 form {
 	display: block;
-	padding: $form-padding 0;
+	// padding: $form-padding 0;
 	h2 {
-		padding: $form-h2-padding 0;
+		padding: 0 0 $form-h2-padding 0;
 	}
 	label {
 		display: block;
@@ -861,9 +873,9 @@ form {
 // Contact Sidebar
 ////////////////////////////////
 .contact-sidebar {
-	padding: $form-padding 0;
+	// padding: $form-padding 0;
 	h2 {
-		padding: $form-h2-padding 0;
+		padding: 0 0 $form-h2-padding 0;
 	}
 	i {
 		width: 24px;
@@ -883,6 +895,42 @@ img {
 	height: auto;
 }
 
+
+////////////////////////////////
+// Buttons
+////////////////////////////////
+.button-wrap {
+	a {
+		display: inline-block;
+		font-family: $raleway;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 18px;
+		padding: 12px 20px;
+		color: $button-color;
+		background: transparent;
+		@include border-radius(3px);
+		text-transform: uppercase;
+		letter-spacing: 0px;
+		text-shadow: none;
+		border: 1px solid $button-color;
+		&:hover {
+			background: $button-color;
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+}
+.button-wrap.white {
+	a {
+		color: #fff;
+		border: 1px solid #fff;
+		&:hover {
+			background: #fff;
+			color: $button-color;
+		}
+	}
+}
 
 
 

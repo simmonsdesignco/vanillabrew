@@ -385,9 +385,22 @@ function sdc_submit($atts, $content = null) {
     $buildReturn = '<div class="field-wrap';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '">';
-    $buildReturn .= '<button type="submit" id="submit-button" onclick="VnB.validate.check("form-1");">'.$atts['label'].'</button>';
+    $buildReturn .= '<button type="submit" id="submit-button">'.$atts['label'].'</button>';
     return $buildReturn.do_shortcode($content).'</div>';
 }
+function sdc_button($atts, $content = '') {
+    $atts = normalize_attributes($atts);
+    $atts = shortcode_atts(array(
+            'link' => '',
+            'class' => ''
+        ), $atts);
+    $buildReturn = '<div class="button-wrap';
+    $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
+    $buildReturn .= '">';
+    $buildReturn .= '<a href="'.$atts['link'].'"><span>';
+    return $buildReturn.do_shortcode($content).'</span></a></div>';
+}
+
 
 
 
@@ -414,6 +427,7 @@ add_shortcode('form', 'sdc_form');
 add_shortcode('field', 'sdc_field');
 add_shortcode('message', 'sdc_message');
 add_shortcode('submit', 'sdc_submit');
+add_shortcode('button', 'sdc_button');
 
 
 

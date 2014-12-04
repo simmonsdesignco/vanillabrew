@@ -136,6 +136,7 @@ $thirds-h3-padding: 24px;
 $fourths-padding: 60px;
 $fourths-icon-color: $red;
 $fourths-h2-color: $red;
+$fourths-h3-padding: 24px;
 
 // Fifths
 $fifths-padding: 60px;
@@ -196,6 +197,11 @@ $submit-border-color-hover: $light-red-bg;
 
 
 ////////////////////////
+// BUTTON
+////////////////////////
+$button-color: $red;
+
+////////////////////////
 // FOOTER
 ////////////////////////
 $footer-section-background: transparent;
@@ -222,6 +228,7 @@ $footer-link-padding: 0px;
 @import 'front-page';
 @import 'sweet-alert';
 @import 'helper';
+@import 'custom';
 
 // Responsive
 @import 'media-queries'
