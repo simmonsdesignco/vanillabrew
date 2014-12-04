@@ -292,7 +292,7 @@ function sdc_divider($atts, $content = null) {
     $atts = shortcode_atts(array(
             'class' => ''
         ), $atts);
-    $buildReturn = '<div class="divider"';
+    $buildReturn = '<div class="divider';
     $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
     $buildReturn .= '"></div>';
     return $buildReturn;

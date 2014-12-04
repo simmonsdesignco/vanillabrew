@@ -28,3 +28,13 @@
 .dark-purple-bg { background: $dark-purple-bg; }
 .purple-bg { background: $purple-bg; }
 
+
+
+// Padding
+.no-padding { padding: 0 !important; }
+.no-margin { margin: 0 !important; }
+.no-top-bottom-margin { margin-top: 0px !important; margin-bottom: 0px !important; }
+.no-top-margin { margin-top: 0 !important; }
+.match-margins { margin-top: ($p-line-height / 2) !important; margin-bottom: ($p-line-height / 2) !important; }
+.match-bottom-margin { margin-bottom: ($p-line-height / 2) !important; }
+
