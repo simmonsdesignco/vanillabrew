@@ -26,7 +26,6 @@ $mode = '?'.time();
 <script src="<?php bloginfo('template_directory'); ?>/js/custom.js<?php echo $mode; ?>"></script>
 
 <?php if (is_front_page()) { ?>
-	<script src="<?php bloginfo('template_url'); ?>/js/gmaps.js"></script>
 <?php } ?>
 <script>
 $('br').each(function(){

@@ -39,6 +39,13 @@ $this_permalink = get_permalink();
             </div>
         </nav>
         <div id="r-nav">
-        	<button type="button" id="r-nav-toggle"><i class="fa fa-navicon"></i></button>
+            <div class="wrap">
+                <a href="<?php bloginfo('url'); ?>" id="nav-logo">Vanilla<span>Brew</span></a>
+            	<button type="button" id="r-nav-open"><i class="fa fa-navicon"></i></button>
+            </div>
         </div>
     </header>
+    <div id="r-nav-menu">
+        <button type="button" id="r-nav-close">close <i class="fa fa-times"></i></button>
+        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'nav-menu', 'menu_class' => 'nav-menu' ) ); ?>
+    </div>

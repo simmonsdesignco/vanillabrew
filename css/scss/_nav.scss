@@ -10,19 +10,6 @@ nav {
 	@include set-transition(all 0.25s ease);
 	background: $nav-background;
 	border-bottom: 1px solid $nav-border;
-	// @media screen and (min-width:1px) and (max-width:767px) {
-	// 	width: 100%;
-	// 	height: 70px;
-	// 	background: $red;
-	// 	.wrap { width: 100%; position: relative; }
-	// 	#nav-logo {
-	// 		margin: 5px 0 0 2.5%;
-	// 		width: 140px;
-	// 		height: 40px;
-	// 		img { top: -40px; }
-	// 	}
-	// 	#r-nav { display: block; }
-	// }
 	ul {
 		list-style-type: none;
 		float: right;
@@ -32,6 +19,7 @@ nav {
 			float: left;
 			margin-left: 40px;
 			line-height: $nav-height;
+			padding: 0;
 			&:first-child { margin-left: 0; }
 		}
 		a {
@@ -66,6 +54,108 @@ nav {
 	&:hover { text-decoration: none; opacity: 0.85; }
 }
 #r-nav { display: none; }
+#r-nav-open {
+	width: 40px;
+	height: 40px;
+	float: right;
+	@include border-radius(20px);
+	border: 1px solid $red;
+	color: $red;
+	margin-top: (($nav-height - 40) / 2);
+	display: inline-block;
+	line-height: 40px;
+	vertical-align: middle;
+	text-align: center;
+	i {
+	}
+}
+#r-nav-close {
+	font-family: $raleway;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 30px;
+	color: #fff;
+	text-transform: uppercase;
+	position: absolute;
+	top: (($nav-height - 40) / 2);
+	right: 2.5%;
+	border: 0;
+	vertical-align: middle;
+	i {
+		font-size: 16px;
+		width: 30px;
+		height: 30px;
+		@include border-radius(15px);
+		border: 1px solid #fff;
+		color: #fff;
+		text-align: center;
+		vertical-align: middle;
+		display: inline-block;
+		line-height: 30px;
+	}
+}
+#r-nav-menu { 
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: $r-nav-menu-background;
+	position: fixed;
+	top: 0; left: -10000px;
+	z-index: 1001;
+	@include set-transition(opacity 0.4s ease);
+	opacity: 0.0;
+	.menu-nav-menu-container {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	ul {
+		text-align: center;
+		@include set-transition(all 0.3s ease 0.1s);
+		@include set-transform(rotateY(90deg));
+	}
+	li {
+		position: relative;
+		top: 20px;
+		@include set-transition(all 0.3s ease 0.1s);
+		padding: 0;
+		margin: 0;
+		opacity: 0.0;
+		&:last-child {
+			&:after {
+				display: none !important;
+			}
+		}
+		&:after {
+			content: '';
+			width: 25%;
+			display: block;
+			background: #fff;
+			opacity: 0.4;
+			height: 1px;
+			margin: 0 auto;
+		}
+		a {
+			color: $r-nav-menu-link-color;
+			font-size: 21px;
+			font-weight: 300;
+			line-height: 70px;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+#r-nav-menu.r-nav-menu--open {
+	left: 0;
+	opacity: 1.0;
+	ul {
+		@include set-transform(none);
+	}
+	li {
+		top: 0;
+		opacity: 1.0;
+	}
+}
 nav.scroll {
 	background: #fff;
 	height: 90px;

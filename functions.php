@@ -400,6 +400,29 @@ function sdc_button($atts, $content = '') {
     $buildReturn .= '<a href="'.$atts['link'].'"><span>';
     return $buildReturn.do_shortcode($content).'</span></a></div>';
 }
+function sdc_list($atts, $content = '') {
+    $atts = normalize_attributes($atts);
+    $atts = shortcode_atts(array(
+            'class' => ''
+        ), $atts);
+    $buildReturn = '<div class="ul-wrap';
+    $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
+    $buildReturn .= '">';
+    $buildReturn .= '<ul class="list">';
+    $closing = '</ul></div>';
+    return $buildReturn.do_shortcode($content).$closing;
+}
+function sdc_list_item($atts, $content = '') {
+    $atts = normalize_attributes($atts);
+    $atts = shortcode_atts(array(
+            'class' => ''
+        ), $atts);
+    $buildReturn = '<li class="list-item';
+    $buildReturn .= ($atts['class'] != '' ? ' '.$atts['class'] : '');
+    $buildReturn .= '">';
+    $closing = '</li>';
+    return $buildReturn.do_shortcode($content).$closing;
+}
 
 
 
@@ -428,6 +451,8 @@ add_shortcode('field', 'sdc_field');
 add_shortcode('message', 'sdc_message');
 add_shortcode('submit', 'sdc_submit');
 add_shortcode('button', 'sdc_button');
+add_shortcode('list', 'sdc_list');
+add_shortcode('list-item', 'sdc_list_item');
 
 
 

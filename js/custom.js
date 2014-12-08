@@ -338,6 +338,43 @@ VnB.validate = (function($, VnB) {
 		callback: callback
 	};
 })($, VnB);
+VnB.responsiveNav = (function($, VnB) {
+
+	var init = function() {
+		// run initial check
+		check();
+		// then run window.resize - listen then check
+		$(window).resize(function(){
+			check();
+		});
+	};
+	var check = function() {
+		var windowWidth = window.innerWidth,
+			useResponsive = windowWidth < 768 ? true : false;
+		useResponsive ? responsiveOn() : responsiveOff();
+	};
+	var responsiveOn = function(){
+		$('#r-nav-open').on('click', function(){
+			// button to open up the nav
+			$('#r-nav-menu').addClass('r-nav-menu--open');
+		});
+		$('#r-nav-close').on('click', function(){
+			// button to close the nav
+			$('#r-nav-menu').removeClass('r-nav-menu--open');
+		});
+	};
+	var responsiveOff = function() {
+		$('#r-nav-open').off('click');
+		$('#r-nav-close').off('click');
+		if ($('#r-nav-menu').hasClass('r-nav-menu--open')) {
+			$('#r-nav-menu').removeClass('r-nav-menu--open');
+		}
+	};
+	return {
+		init: init,
+		check: check
+	};
+})($, VnB);
 
 
 
@@ -345,6 +382,7 @@ VnB.parallax.init();
 VnB.slider.init();
 VnB.gmaps.init();
 VnB.validate.init();
+VnB.responsiveNav.init();
 
 
 
