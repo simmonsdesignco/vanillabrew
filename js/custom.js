@@ -1,4 +1,5 @@
-var VnB = VnB || {};
+var VnB = VnB || {},
+	isMobile = (window.innerWidth < 768) ? true : false;
 
 VnB.gmaps = (function($, VnB) {
 	function init() {
@@ -93,7 +94,11 @@ VnB.parallax = (function($, VnB) {
 		} // if .width-parallax.length > 0
 	}
 	return {
-		init: init
+		init: function(){
+			if (!isMobile) {
+				init();
+			}
+		}
 	};
 })($, VnB);
 
@@ -250,19 +255,19 @@ VnB.validate = (function($, VnB) {
 	var errorMessages = function(error) {
 		var msg = '';
 		if (error == 'first-name') {
-			msg = 'Please enter a first name.';
+			msg = 'What is your first name?';
 		}
 		if (error == 'last-name') {
-			msg = 'Please enter a last name.';
+			msg = 'What is your last name?';
 		}
 		if (error == 'email') {
-			msg = 'Enter a valid email address.';
+			msg = 'What is your email address?';
 		}
 		if (error == 'phone-number') {
-			msg = 'Enter a valid phone number.';
+			msg = 'What is your phone number?';
 		}
 		if (error == 'message') {
-			msg = 'Please enter a message.';
+			msg = 'What\'s on your mind?';
 		}
 		return msg;
 	};
@@ -410,7 +415,3 @@ function addlinks(data) {
 
 
 
-
-		// window.addEventListener('scroll', function(){ // on page scroll
-			// handleScroll($parallax);
-		// }, false);

@@ -6,6 +6,34 @@
 ////////////////////////////////
 // Nav
 ////////////////////////////////
+@media screen and (min-width:1px) and (max-width:767px) {
+	nav {
+		display: none;
+	}
+	#r-nav { display: block; }
+}
+
+////////////////////////////////
+// Slider
+////////////////////////////////
+@media screen and (min-width:1px) and (max-width:1199px) {
+	.slider-bg-size,
+	.slide, #next-slide,
+	.slide-1,
+	.slide-2,
+	.slide-3,
+	.slide-4,
+	.slide-5,
+	.slide-6,
+	.slide-7,
+	.slide-8,
+	.slide-9,
+	.slide-10 { @include background-size(cover); }
+	.headline.full-width { @include background-size(cover); height: 100%; height: calc(100% - 90px); }
+	.headline.full-width .wrap { height: 100%; }
+}
+
+
 
 @media screen and (min-width:$min-width-1024) and (max-width:$page-width) {
 }
@@ -14,16 +42,67 @@
 }
 
 @media screen and (min-width:$min-width-420) and (max-width:$max-width-767) {
+	.slider.full-width { max-height: 95%; }
+	.thirds-full-width .section {
+		width: 50%;
+		&:nth-of-type(2n+1) {
+			clear: both;
+		}
+		&:nth-of-type(n+3) {
+			margin-top: ($p-line-height / 2);
+		}
+		// reset
+		&:nth-of-type(4n) {
+			clear: none;
+		}
+		&:nth-of-type(n+4) {
+			margin-top: 0;
+		}
+	}
+	.fourths-full-width .section {
+		width: 50%;
+		&:nth-of-type(2n+1) {
+			clear: both;
+		}
+		&:nth-of-type(n+3) {
+			margin-top: ($p-line-height / 2);
+		}
+		// reset
+		&:nth-of-type(5n) {
+			clear: none;
+		}
+		&:nth-of-type(n+5) {
+			margin-top: 0;
+		}
+	}
 }
 
 @media screen and (min-width:$min-width-1) and (max-width:$max-width-419) {
-}
-
-
-@media screen and (min-width:1px) and (max-width:767px) {
-	nav {
-		display: none;
+	.slider.full-width { height: 85%; height: calc(100% - 90px); }
+	.headline-small.full-width { height: 50%; }
+	.headline-small.full-width .wrap { height: 100%; }
+	.halves-full-width .section, .thirds-full-width .section, .fourths-full-width .section, .fifths-full-width .section, .sixths-full-width .section {
+		width: 100%;
+		&:nth-of-type(n+1) {
+			clear: both;
+			margin-top: ($p-line-height / 2);
+		}
 	}
-	#r-nav { display: block; }
+	.content-block, .side-bar {
+		width: 100% !important;
+		&:before, &:after {
+			height: 20px !important;
+		}
+	}
+	.content-block .wrap {
+		padding: 0 !important;
+		margin: 0 auto !important;
+	}
+	form .field-wrap {
+		width: 100%;
+	}
+
 }
+
+
 

@@ -45,7 +45,15 @@
 
 
 
-
+.row-top-padding.one-full-width {
+	&:before {
+		content: '';
+		width: 100%;
+		height: $halves-padding;
+		display: block;
+		clear: both;
+	}
+}
 .row-top-padding.halves-full-width {
 	&:before {
 		content: '';

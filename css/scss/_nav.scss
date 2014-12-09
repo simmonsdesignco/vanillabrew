@@ -103,6 +103,7 @@ nav {
 	top: 0; left: -10000px;
 	z-index: 1001;
 	@include set-transition(opacity 0.4s ease);
+	@include set-transform(translate3d(0,0,0));
 	opacity: 0.0;
 	.menu-nav-menu-container {
 		display: table-cell;
@@ -111,7 +112,7 @@ nav {
 	ul {
 		text-align: center;
 		@include set-transition(all 0.3s ease 0.1s);
-		@include set-transform(rotateY(90deg));
+		@include set-transform((rotateY(90deg) translate3d(0,0,0)));
 	}
 	li {
 		position: relative;
@@ -149,7 +150,7 @@ nav {
 	left: 0;
 	opacity: 1.0;
 	ul {
-		@include set-transform(none);
+		@include set-transform(translate3d(0,0,0));
 	}
 	li {
 		top: 0;

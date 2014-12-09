@@ -98,6 +98,20 @@ function sdc_icon($atts, $content = null) {
     $buildReturn = '<i class="fa fa-'.$atts['class'].'"></i>';
     return $buildReturn;
 }
+function sdc_one($atts, $content = '') {
+    $atts = normalize_attributes($atts);
+    $atts = shortcode_atts(array(
+            'full-width' => false,
+            'class' => ''
+        ), $atts);
+    if ($atts['full-width']) {
+        $buildReturn .= '<section class="one-full-width '.$atts['class'].'">';
+    }
+    $buildReturn .= '<div class="wrap">';
+    $closing .= '</div>';
+    if ($atts['full-width']) { $closing .= '</section>'; }
+    return $buildReturn.do_shortcode($content).$closing;
+}
 function sdc_halves($atts, $content = '') {
     $atts = normalize_attributes($atts);
     $atts = shortcode_atts(array(
@@ -431,6 +445,7 @@ function sdc_list_item($atts, $content = '') {
 add_shortcode('icon', 'sdc_icon');
 add_shortcode('headline', 'sdc_headline');
 add_shortcode('headline-small', 'sdc_headline_small');
+add_shortcode('one-row', 'sdc_one');
 add_shortcode('halves-row', 'sdc_halves');
 add_shortcode('thirds-row', 'sdc_thirds');
 add_shortcode('fourths-row', 'sdc_fourths');
